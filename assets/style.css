@@ -1,0 +1,29 @@
+ * {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ .scores {
+     position: absolute;
+     top: 18px;
+     left: 20px;
+     font-size: 15px;
+ }
+
+ #timeleft {
+     position: absolute;
+     top: 0px;
+     right: 20px;
+     font-size: 20px;
+
+ }
+
+ .container {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+ }
+
+ h2 {
+    font-size: 20px;
+ }
