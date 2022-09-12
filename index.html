@@ -19,7 +19,7 @@
     </header>
 
     <div>
-        <div class="container">
+        <div id="begining" class="container">
             <h1>Anatomy Quiz!</h1>
             <h2>Can you answer all 5 questions before time runs out?</h2>
             <button class="start" id="start">Start Quiz</button>
@@ -29,7 +29,15 @@
 
     <main id="questions" class="hide">
         <h3 class="questiontitle"></h3>
-    <div id="choices" class="choices"></div>
+        <div id="choices" class="choices">
+            <h3>questions go here</h3>
+            <div class="options">
+                <button id="1">how</button>
+                <button id="2">why</button>
+                <button id="3">could this get worse</button>
+                <button id="4"></button>
+            </div>
+        </div>
         <section class="button" id="sumbitscore"></section>
     </main>
 
@@ -41,7 +49,9 @@
         </p>
     </div>
 
-    <script src="./JS/questions.js"></script>
+    <div id="rightwrong" class="rightwrong hide"></div>
+
+
     <script src="./JS/highscore.js"></script>
     <script src="./JS/script.js"></script>
 </body>
