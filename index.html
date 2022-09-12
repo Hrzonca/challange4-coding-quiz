@@ -20,23 +20,28 @@
 
     <div>
         <div class="container">
-            <h1>Welcome to Our Anatomy Quiz!</h1>
+            <h1>Anatomy Quiz!</h1>
             <h2>Can you answer all 5 questions before time runs out?</h2>
             <button class="start" id="start">Start Quiz</button>
 
         </div>
     </div>
 
-    <main id="question">
-        <section class="button" id="question1"></section>
-        <section class="button" id="question2"></section>
-        <section class="button" id="question3"></section>
-        <section class="button" id="question4"></section>
-        <section class="button" id="question5"></section>
+    <main id="questions" class="hide">
+        <h3 class="questiontitle"></h3>
+    <div id="choices" class="choices"></div>
         <section class="button" id="sumbitscore"></section>
     </main>
 
+    <div id="finish" class="hide">
+        <h4>Finished!</h4>
+        <p>Your final score is <span id="finalscore"></span>.</p>
+        <p>
+            Enter initals: <input type="text" id="initals" max="5">
+        </p>
+    </div>
 
-
-    <script src="./assets/script.js"></script>
+    <script src="./JS/questions.js"></script>
+    <script src="./JS/highscore.js"></script>
+    <script src="./JS/script.js"></script>
 </body>
