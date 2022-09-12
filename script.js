@@ -25,6 +25,9 @@ submitScoreEl.style.display = 'none';
 score.addEventListener('click', viewHighScore);
 function viewHighScore() {
     console.log('viewing high score')
+    save
+
+    //take you to the view high scores page (need to make a for loop or function for that)
 }
 
 //recognizing you clicked the start quiz button. todo: connect the questions to this button
@@ -32,8 +35,7 @@ start.addEventListener('click', startQuizButton);
 function startQuizButton() {
     console.log("you clicked me");
 
-    //document.querySelector('#start').addEventListener('click', start)
-
+//trying to make timer work
     var message = 'Out of Time!'
     function countDown() {
         var timeEl = document.querySelector(".timeLeft")
@@ -55,7 +57,7 @@ function startQuizButton() {
     }
 }
 //Start button to move to the first question
-//startQuizButton.addEventListener('click', function() {}
+
 var anatomyQuestion = {
     questions: {
         0: 'How many bones are in the human body?',
@@ -114,6 +116,18 @@ var correctAnswers = {
 }
 //make a for loop to cycle thrpugh questions randomly?
 //whichever answer the user chooses, they are prompted if it is right or wrong. if right then the quiz moves on and add 1 second. if wrong the quiz moves on but 5 seconds is removed. has to be done with all the questions. 
+let question1El = {
+    question: 'How many bones are in the human body?',
+    anatomyOptions: ['404', '3', '206', '372'],
+    correctAnswers: 2
+};
+function showQuestion (question1El) {
+    let question1El = document.getElementById('question1');
+    question1El.textContent = question1El.quesstion1;
+
+}
+showQuestion(question1El)
+
 question1El.addEventListener('click', function () {
     if (question.textContent === 'How many bones are in the human body?' && question5El === "206") {
         console.log("Correct!")
