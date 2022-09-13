@@ -53,14 +53,24 @@ function startQuizButton() {
     document.getElementById('questions').setAttribute('style', 'display: none;');
 
     currentQuestion = 0;
-    showQuestion();
+    showQuestion(currentQuestion);
 }
-function showQuestion() {
-    document.getElementById('questions').setAttribute('style', 'display: block, center;');
 
-    var currentQuestion = quiz[currentQuestionIndex].question;
+function showQuestion(questionIndex) {
+
+    document.getElementById('questions').setAttribute('style', 'display: block, center;');
+    var buttonOption1 = document.getElementById("option1")
+    var buttonOption2 = document.getElementById("option2")
+    var buttonOption3 = document.getElementById("option3")
+    var buttonOption4 = document.getElementById("option4")
+    buttonOption1.textContent(quiz[questionIndex].options[0])
+    buttonOption2.textContent(quiz[questionIndex].options[1])
+    buttonOption3.textContent(quiz[questionIndex].options[2])
+    buttonOption4.textContent(quiz[questionIndex].options[3])
+
+    var currentQuestion = quiz[questionIndex].question;
     console.log("my current que is " + currentQuestion);
-   
+
     // created lis
     var myoptionEl = quiz[currentQuestionIndex].options[0];
     console.log(myoptionEl);
