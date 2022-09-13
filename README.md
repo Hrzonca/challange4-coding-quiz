@@ -1,10 +1,16 @@
 Project: Coding Anatomy Quiz Using Web APIs
 Description
+My site is suppose to be a timed quiz that counts down after you press the start button and a question appears. 
+
+I am having trouble connecting the questions and the options in some way that will appear on screen. Also, i cant figure out how to get the timer to count down.
+
+Due to a chaotic week, it is not complete yet but I wanted to turn in something on the due date. I will be trying to complete it tomorrow. 
 
 Live Link:
+https://hrzonca.github.io/challange4-coding-quiz/
 
 Respository link:
-
+https://github.com/Hrzonca/challange4-coding-quiz
 License:
 MIT
 

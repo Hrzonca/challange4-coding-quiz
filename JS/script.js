@@ -4,11 +4,12 @@ var choicesEl = document.querySelector('#choices')
 var submitBtn = document.querySelector('#submitscore');
 var startBtn = document.querySelector('#start');
 var initalsEl = document.querySelector('#initals');
+var rightwrongEl = document.querySelector('#rightwrong')
 
 document.getElementById('finish').setAttribute('style', 'display:none;');
 document.getElementById('questions').setAttribute('style', 'display: none;');
 
-var question = [
+var quiz = [
     {
         question: "How many bones are in the human body?",
         options: ['404', '3', '206', '372'],
@@ -37,14 +38,17 @@ var question = [
     },
 ]
 
-
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
-//recognizing you clicked the start quiz button. todo: connect the questions to this button
+
 start.addEventListener('click', startQuizButton);
 function startQuizButton() {
     console.log("you clicked me");
+
+    document.getElementById('finish').setAttribute('style', 'display:none;');
+    document.getElementById('questions').setAttribute('style', 'display: none;');
+
     document.getElementById("begining").setAttribute('style', 'display: none;');
     document.getElementById('questions').setAttribute('style', 'display: none;');
 
@@ -54,17 +58,11 @@ function startQuizButton() {
 function showQuestion() {
     document.getElementById('questions').setAttribute('style', 'display: block, center;');
 
+    var currentQuestion = quiz[currentQuestionIndex].question;
+    console.log("my current que is " + currentQuestion);
+   
+    // created lis
+    var myoptionEl = quiz[currentQuestionIndex].options[0];
+    console.log(myoptionEl);
 
 }
-
-function checkAnswer(event) {
-    console.log(event.target.textContent)
-    currentQuestionIndex++;
-    if (currentQuestionIndex < question.length) {
-        showQuestion()
-    }
-}
-document.getElementById('1').addEventListener('click', checkAnswer);
-document.getElementById('2').addEventListener('click', checkAnswer);
-document.getElementById('3').addEventListener('click', checkAnswer);
-document.getElementById('4').addEventListener('click', checkAnswer);

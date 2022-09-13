@@ -1,5 +1,5 @@
 //just for the questions 
-var question = [
+var quiz = [
     {
         question: "How many bones are in the human body?",
         options: ['404', '3', '206', '372'],
