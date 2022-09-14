@@ -27,3 +27,54 @@ var quiz = [
         correctAnswer: 'Collagen'
     },
 ]
+//other question but just trying to work on question 1 first 
+var buttonOption1 = document.querySelector("#option1")
+var buttonOption2 = document.querySelector("#option2")
+var buttonOption3 = document.querySelector("#option3")
+var buttonOption4 = document.querySelector("#option4")
+buttonOption1.textContent = quiz[currentQuestion].options[0];
+buttonOption2.textContent = quiz[currentQuestion].options[1];
+buttonOption3.textContent = quiz[currentQuestion].options[2];
+buttonOption4.textContent = quiz[currentQuestion].options[3];
+
+
+
+
+var currentQuestion = 2;
+var buttonOption1 = document.querySelector("#option1")
+var buttonOption2 = document.querySelector("#option2")
+var buttonOption3 = document.querySelector("#option3")
+var buttonOption4 = document.querySelector("#option4")
+buttonOption1.textContent = quiz[currentQuestion].options[0];
+buttonOption2.textContent = quiz[currentQuestion].options[1];
+buttonOption3.textContent = quiz[currentQuestion].options[2];
+buttonOption4.textContent = quiz[currentQuestion].options[3];
+
+
+
+var currentQuestion = 3;
+var buttonOption1 = document.querySelector("#option1")
+var buttonOption2 = document.querySelector("#option2")
+var buttonOption3 = document.querySelector("#option3")
+var buttonOption4 = document.querySelector("#option4")
+buttonOption1.textContent = quiz[currentQuestion].options[0];
+buttonOption2.textContent = quiz[currentQuestion].options[1];
+buttonOption3.textContent = quiz[currentQuestion].options[2];
+buttonOption4.textContent = quiz[currentQuestion].options[3];
+
+
+
+var currentQuestion = 4;
+var buttonOption1 = document.querySelector("#option1")
+var buttonOption2 = document.querySelector("#option2")
+var buttonOption3 = document.querySelector("#option3")
+var buttonOption4 = document.querySelector("#option4")
+buttonOption1.textContent = quiz[currentQuestion].options[0];
+buttonOption2.textContent = quiz[currentQuestion].options[1];
+buttonOption3.textContent = quiz[currentQuestion].options[2];
+buttonOption4.textContent = quiz[currentQuestion].options[3];
+
+// created lis
+
+
+

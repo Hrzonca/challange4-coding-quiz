@@ -38,8 +38,8 @@ var quiz = [
     },
 ]
 
-var currentQuestionIndex = 0;
-var time = questions.length * 15;
+
+var time = questionsEl.length * 15;
 var timerId;
 
 start.addEventListener('click', startQuizButton);
@@ -52,27 +52,36 @@ function startQuizButton() {
     document.getElementById("begining").setAttribute('style', 'display: none;');
     document.getElementById('questions').setAttribute('style', 'display: none;');
 
-    currentQuestion = 0;
+    var currentQuestion = 0;
     showQuestion(currentQuestion);
 }
 
-function showQuestion(questionIndex) {
-
+//currentQuestion is only pulling the first question. i need it to cycle through the questions one by one after answering the previous one
+function showQuestion(currentQuestion) {
+    
     document.getElementById('questions').setAttribute('style', 'display: block, center;');
-    var buttonOption1 = document.getElementById("option1")
-    var buttonOption2 = document.getElementById("option2")
-    var buttonOption3 = document.getElementById("option3")
-    var buttonOption4 = document.getElementById("option4")
-    buttonOption1.textContent(quiz[questionIndex].options[0])
-    buttonOption2.textContent(quiz[questionIndex].options[1])
-    buttonOption3.textContent(quiz[questionIndex].options[2])
-    buttonOption4.textContent(quiz[questionIndex].options[3])
+    var questionTitle1 = document.querySelector('#title')
+    var buttonOption1 = document.querySelector("#option1");
+    var buttonOption2 = document.querySelector("#option2");
+    var buttonOption3 = document.querySelector("#option3");
+    var buttonOption4 = document.querySelector("#option4");
+    questionTitle1.textContent = quiz[currentQuestion].question; 
+    buttonOption1.textContent = quiz[currentQuestion].options[0];
+    buttonOption2.textContent = quiz[currentQuestion].options[1];
+    buttonOption3.textContent = quiz[currentQuestion].options[2];
+    buttonOption4.textContent = quiz[currentQuestion].options[3];
 
-    var currentQuestion = quiz[questionIndex].question;
+    var currentQuestion = quiz[currentQuestion].question;
     console.log("my current que is " + currentQuestion);
 
-    // created lis
-    var myoptionEl = quiz[currentQuestionIndex].options[0];
-    console.log(myoptionEl);
+    var userChoice;
+    if (userChoice === "206") {
+        console.log('correct')
+        userChoice = ("Correct!")
+    } else {
+        console.log("wrong")
+        userChoice = ("Wrong!")
+    }
 
 }
+
