@@ -4,84 +4,79 @@ var choicesEl = document.querySelector('#choices')
 var submitBtn = document.querySelector('#submitscore');
 var startBtn = document.querySelector('#start');
 var initalsEl = document.querySelector('#initals');
-var rightwrongEl = document.querySelector('#rightwrong')
+var rightwrongEl = document.querySelector('#rightwrong');
+var titleOption = document.getElementById("titleOption");
 
 document.getElementById('finish').setAttribute('style', 'display:none;');
 document.getElementById('questions').setAttribute('style', 'display: none;');
-
-var quiz = [
-    {
-        question: "How many bones are in the human body?",
-        options: ['404', '3', '206', '372'],
-        correctAnswer: '206'
-    },
-    {
-        question: 'Which cells in the blood do not have a nucleus?',
-        options: ['Monocyte', 'Basophil', 'Erthrocyte', 'Lymphocyte'],
-        correctAnswer: 'Erthrocyte'
-    },
-    {
-        question: 'Which of the following cranial nerves is related to the sense of smell?',
-        options: ['Olfactory', 'Trigeminal', 'Optic', 'Facial'],
-        correctAnswer: 'Olfactory'
-    },
-    {
-        question: 'Which of the following substances is found in greater quantity in exhaled air?',
-        options: ['Carbon monoxide', 'Carbon dioxide', 'Xenon', 'Nitrogen'],
-        correctAnswer: 'Carbon dioxide'
-
-    },
-    {
-        question: 'Which of the following is a structural, fibrous protein found in the dermis?',
-        options: ['Sebum', 'Melanin', 'Elastin', 'Collagen'],
-        correctAnswer: 'Collagen'
-    },
-]
+var I = 0;
 
 
-var time = questionsEl.length * 15;
+
+var time = quiz.length * 12;
 var timerId;
 
 start.addEventListener('click', startQuizButton);
 function startQuizButton() {
     console.log("you clicked me");
+    timerId = setInterval(clock, 1000);
+    timerEl.textContent = timerId;
 
 
     document.getElementById('finish').setAttribute('style', 'display:none;');
-    document.getElementById('questions').setAttribute('style', 'display: none;');
+    document.getElementById('questions').setAttribute('style', 'display: block;');
 
     document.getElementById("begining").setAttribute('style', 'display: none;');
-    document.getElementById('questions').setAttribute('style', 'display: none;');
-
-    var currentQuestion = 0;
-    showQuestion(currentQuestion);
-}
-
-//currentQuestion is only pulling the first question. i need it to cycle through the questions one by one after answering the previous one
-function showQuestion(currentQuestion) {
-  
-   document.getElementById('questions').setAttribute('style', 'display: block, center;');
     
-    var questionTitle1 = document.querySelector('#title')
-    var buttonOption1 = document.querySelector("#option1");
-    var buttonOption2 = document.querySelector("#option2");
-    var buttonOption3 = document.querySelector("#option3");
-    var buttonOption4 = document.querySelector("#option4");
-    questionTitle1.textContent = quiz[currentQuestion].question;
-    buttonOption1.textContent = quiz[currentQuestion].options[0];
-    buttonOption2.textContent = quiz[currentQuestion].options[1];
-    buttonOption3.textContent = quiz[currentQuestion].options[2];
-    buttonOption4.textContent = quiz[currentQuestion].options[3];
-//need it to save the user choice and show that they are right or wrong for loop?
 
-//just showing the current question
-    var currentQuestion = quiz[currentQuestion].question;
-    console.log("my current que is " + currentQuestion);
-
-
-  
-
+   
+    showQuestion();
 }
 
+function clock() {
+    time--;
+    timerEl.textContent = time;
+    if (time <= 0) {
+        endQuiz();
+    } 
+}
+ 
+function showQuestion() {
+  
+    var currentQ = quiz[I].question;
+    console.log(currentQ);
+    var questionTitle1 = document.querySelector('#title');
+    questionTitle1.textContent =quiz[I].question;
+    titleOption.textContent ="";
+    quiz[I].options.forEach(function(choice) {
+       var optionsbtn = document.createElement("button");
+       optionsbtn.setAttribute("value", choice);
+       optionsbtn.setAttribute("class", "titleoptions"); 
+       optionsbtn.textContent = choice;
+       optionsbtn.onclick = nextQuestion;
+       titleOption.appendChild(optionsbtn);
 
+
+    });
+   
+
+}
+function nextQuestion() {
+    
+    I++;
+
+    if (I === quiz.length) {
+        endQuiz();
+    
+    } else {
+        showQuestion()
+    }
+
+    //look at activies for 
+}
+
+function endQuiz() {
+    document.getElementById('questions').setAttribute('style', 'display: none;');
+clearInterval(timerId);
+}
 
