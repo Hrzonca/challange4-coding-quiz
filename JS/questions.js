@@ -74,7 +74,28 @@ buttonOption2.textContent = quiz[currentQuestion].options[1];
 buttonOption3.textContent = quiz[currentQuestion].options[2];
 buttonOption4.textContent = quiz[currentQuestion].options[3];
 
+//tryign to get the userChoice to save and grade 
+var userChoice = "";
+if (userChoice === buttonOption2) {
+    console.log('correct')
+    userChoice = ("Correct!")
+} else {
+    console.log("wrong")
+    userChoice = ("Wrong!")
+}
 // created lis
 
 
+//timer that is put in the startQuizButton function
+var timeInterval = setInterval(function () {
+    secondsLeft--;
+    timerEl.textContent = secondsLeft + "seconds left."
+    if (secondsLeft === 0) {
+        clearInterval(timeInterval)
+        sendMessage();
+    }
+}, 1000);
+function sendMessage() {
+    timerEl.textContent = "";
 
+}

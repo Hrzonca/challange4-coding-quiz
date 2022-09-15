@@ -45,18 +45,7 @@ var timerId;
 start.addEventListener('click', startQuizButton);
 function startQuizButton() {
     console.log("you clicked me");
-    var timeInterval = setInterval(function () {
-        secondsLeft--;
-        timerEl.textContent = secondsLeft + "seconds left."
-        if (secondsLeft === 0) {
-            clearInterval(timeInterval)
-            sendMessage();
-        }
-    }, 1000);
-    function sendMessage() {
-        timerEl.textContent = "";
-    
-    }
+
 
     document.getElementById('finish').setAttribute('style', 'display:none;');
     document.getElementById('questions').setAttribute('style', 'display: none;');
@@ -70,8 +59,9 @@ function startQuizButton() {
 
 //currentQuestion is only pulling the first question. i need it to cycle through the questions one by one after answering the previous one
 function showQuestion(currentQuestion) {
-
-    document.getElementById('questions').setAttribute('style', 'display: block, center;');
+  
+   document.getElementById('questions').setAttribute('style', 'display: block, center;');
+    
     var questionTitle1 = document.querySelector('#title')
     var buttonOption1 = document.querySelector("#option1");
     var buttonOption2 = document.querySelector("#option2");
@@ -82,18 +72,16 @@ function showQuestion(currentQuestion) {
     buttonOption2.textContent = quiz[currentQuestion].options[1];
     buttonOption3.textContent = quiz[currentQuestion].options[2];
     buttonOption4.textContent = quiz[currentQuestion].options[3];
+//need it to save the user choice and show that they are right or wrong for loop?
 
+//just showing the current question
     var currentQuestion = quiz[currentQuestion].question;
     console.log("my current que is " + currentQuestion);
 
-    var userChoice = "";
-    if (userChoice === buttonOption2) {
-        console.log('correct')
-        userChoice = ("Correct!")
-    } else {
-        console.log("wrong")
-        userChoice = ("Wrong!")
-    }
+
+  
 
 }
+
+
 
